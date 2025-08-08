@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parent_Suite">
+<listeners>
+<listener class-name="com.listeners.RetryListener"/>
+</listeners>
+<test name="ItestReporter">
+<classes>
+<class name="com.pages.BedRoomMattressesTest" />
+<class name="com.pages.HomePageTest" />
+</classes>
+</test>
+</suite>
+<!-- Suite -->

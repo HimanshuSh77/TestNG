@@ -1,0 +1,13 @@
+# Ignored Files
+
+*.class
+*.log
+*.tmp
+*.png
+
+
+test-output/
+logs/
+target/
+
+
