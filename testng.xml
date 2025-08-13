@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Parent_Suite">
+<suite name="Parent_Suite" >
 <listeners>
 <listener class-name="com.listeners.RetryListener"/>
+<listener class-name="com.listeners.ThreadConfigListener"/>
 </listeners>
 <test name="ItestReporter">
 <parameter name="browser" value="chrome"/>
 <parameter name="isRemote" value="true"/>
 <classes>
-<!--<class name="com.pages.BedRoomMattressesTest" />-->
+<class name="com.pages.BedRoomMattressesTest" />
  <class name="com.pages.HomePageTest" />
 </classes>
 </test>

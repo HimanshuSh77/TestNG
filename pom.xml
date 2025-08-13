@@ -20,6 +20,8 @@
 		<allure.version>2.24.0</allure.version>
 		<aspectj.version>1.9.9.1</aspectj.version>
 
+		<threads>2</threads>
+		<parallel>classes</parallel>
 
 	</properties>
 
@@ -137,6 +139,10 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					<systemPropertyVariables>
+						<threads>${threads}</threads>
+						<parallel>${parallel}</parallel>
+					</systemPropertyVariables>
 				</configuration>
 				<dependencies>
 					<dependency>

@@ -27,7 +27,7 @@ public class DriverFactory {
 
 			if (browser.equalsIgnoreCase("chrome")) {
 
-				WebDriverManager.chromedriver().setup();
+				
 				ChromeOptions chromeOptions = new ChromeOptions();
 				chromeOptions.addArguments("--start-maximized");
 				chromeOptions.addArguments("--disable-notifications");
@@ -36,18 +36,20 @@ public class DriverFactory {
 					tldriver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), // Your Grid hub URL
 							chromeOptions));
 				} else {
-
+					WebDriverManager.chromedriver().setup();
 					tldriver.set(new ChromeDriver(chromeOptions));
 				}
 			} else if (browser.equalsIgnoreCase("firefox")) {
-				WebDriverManager.firefoxdriver().setup();
+				
 				FirefoxOptions firefoxOptions = new FirefoxOptions();
+				firefoxOptions.addArguments("--start-maximized");
+				firefoxOptions.addArguments("--disable-notifications");
 
 				if (isRemote) {
 					tldriver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), // Your Grid hub URL
 							firefoxOptions));
 				} else {
-
+					WebDriverManager.firefoxdriver().setup();
 					tldriver.set(new FirefoxDriver());
 				}
 			} else {
