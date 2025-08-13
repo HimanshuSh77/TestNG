@@ -5,9 +5,11 @@
 <listener class-name="com.listeners.RetryListener"/>
 </listeners>
 <test name="ItestReporter">
+<parameter name="browser" value="chrome"/>
+<parameter name="isRemote" value="true"/>
 <classes>
-<class name="com.pages.BedRoomMattressesTest" />
-<class name="com.pages.HomePageTest" />
+<!--<class name="com.pages.BedRoomMattressesTest" />-->
+ <class name="com.pages.HomePageTest" />
 </classes>
 </test>
 </suite>

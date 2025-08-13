@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.factory.DriverFactory;
@@ -22,34 +23,35 @@ public class BedRoomMattressesTest extends DriverFactory {
 	private WebDriver driver;
 	Properties prop;
 	BedRoomMattresses bd;
-	
+
 	@BeforeTest
-	   public void lauchBrowser() {
-			prop=new ConfigReader().init_prop();
-			driver=init_driver(prop.getProperty("browser"));
-			driver.get(prop.getProperty("url"));
-			
-	   }
+	@Parameters({"browser","isRemote"})
+	public void lauchBrowser(String browser, String isRemote) {
+		prop = new ConfigReader().init_prop();
+		driver = init_driver(browser, Boolean.valueOf(isRemote));
+		driver.get(prop.getProperty("url"));
+
+	}
+
 	@Description(value = "This is category Validation")
-    @Severity(SeverityLevel.NORMAL)
+	@Severity(SeverityLevel.NORMAL)
 	@Test
 	public void validateCategory() {
-		bd=new BedRoomMattresses(driver);
-		Assert.assertEquals(bd.getCategory(),"Bedroom & Mattresses");	
+		bd = new BedRoomMattresses(driver);
+		Assert.assertEquals(bd.getCategory(), "Bedroom & Mattresses");
 	}
-	
+
 	@Description(value = "This is ChildOption Validation")
-    @Severity(SeverityLevel.NORMAL)
+	@Severity(SeverityLevel.NORMAL)
 	@Test
 	public void validateChildOptionAvailable() throws InterruptedException {
-		bd=new BedRoomMattresses(driver);
-		Assert.assertEquals(bd.checkChildOptionIsPresent(),true);
+		bd = new BedRoomMattresses(driver);
+		Assert.assertEquals(bd.checkChildOptionIsPresent(), true);
 	}
-	
 
 	@AfterTest
-	 public void closeBrowser() {
+	public void closeBrowser() {
 		driver.quit();
-	  }
-	
+	}
+
 }
