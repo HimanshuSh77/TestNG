@@ -7,7 +7,7 @@
 </listeners>
 <test name="ItestReporter">
 <parameter name="browser" value="chrome"/>
-<parameter name="isRemote" value="false"/>
+<parameter name="isRemote" value="true"/>
 <classes>
 <class name="com.pages.BedRoomMattressesTest" />
  <class name="com.pages.HomePageTest" />
