@@ -33,7 +33,7 @@ public class DriverFactory {
 				chromeOptions.addArguments("--disable-notifications");
 
 				if (isRemote) {
-					tldriver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), // Your Grid hub URL
+					tldriver.set(new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), // Your Grid hub URL
 							chromeOptions));
 				} else {
 					WebDriverManager.chromedriver().setup();
@@ -46,7 +46,7 @@ public class DriverFactory {
 				firefoxOptions.addArguments("--disable-notifications");
 
 				if (isRemote) {
-					tldriver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), // Your Grid hub URL
+					tldriver.set(new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), // Your Grid hub URL
 							firefoxOptions));
 				} else {
 					WebDriverManager.firefoxdriver().setup();
