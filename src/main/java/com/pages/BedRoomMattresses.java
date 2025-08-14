@@ -22,7 +22,7 @@ public class BedRoomMattresses {
 	@FindBy(xpath="//nav[@aria-label='menuItem']//a[text()=' Bedroom & Mattresses ']")
 	WebElement bedroom_matresses;
 	
-	@FindBy(xpath="//a[text()=' Bedroom & Mattresses ']/ancestor::nav//div[contains(@class,'wrapper-desktop')]//ul[contains(@class,'desktop-submenu')]//a[text()='Kids Beds']")
+	@FindBy(xpath="//div[contains(@class,'desktop-submenu')]//a[text()='King Beds']")
 	WebElement kids_beds;
 	
 	public BedRoomMattresses(final WebDriver driver) {
@@ -33,8 +33,9 @@ public class BedRoomMattresses {
 		}
 	
 	@Step(value = "Home Child Category Validation")
-	public String getCategory() {
+	public String getCategory() throws InterruptedException {
 		bedroom_matresses.click();
+		Thread.sleep(5000);
 		return categoty.getText();
 		
 	}

@@ -5,7 +5,9 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -23,7 +25,7 @@ public class HomePageTest extends DriverFactory {
 	HomePage hp;
 
 	@Parameters({"browser","isRemote"})
-	@BeforeTest
+	@BeforeMethod
 	public void lauchBrowser(String browser, String isRemote) {
 		prop = new ConfigReader().init_prop();
 		driver = init_driver(browser, Boolean.valueOf(isRemote));
@@ -50,7 +52,7 @@ public class HomePageTest extends DriverFactory {
 
 	}
 
-	@AfterTest
+	@AfterMethod
 	public void closeBrowser() {
 		driver.quit();
 	}
