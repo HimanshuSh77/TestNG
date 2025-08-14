@@ -3,11 +3,11 @@
 <suite name="Parent_Suite" >
 <listeners>
 <listener class-name="com.listeners.RetryListener"/>
-<listener class-name="com.listeners.ThreadConfigListener"/>
+
 </listeners>
 <test name="ItestReporter">
 <parameter name="browser" value="chrome"/>
-<parameter name="isRemote" value="true"/>
+<parameter name="isRemote" value="false"/>
 <classes>
 <class name="com.pages.BedRoomMattressesTest" />
  <class name="com.pages.HomePageTest" />
